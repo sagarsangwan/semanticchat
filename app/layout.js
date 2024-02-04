@@ -1,7 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider"
-import Container from "postcss/lib/container";
+import Navbar from "@/components/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,6 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className='dark'>
       <body className='container mx-auto'>
+        <Navbar />
 
         {children}</body>
     </html>
