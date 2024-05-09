@@ -1,26 +1,16 @@
-"use client"
+// "use client"
 
 import * as React from "react"
-
-import { cn } from "@/lib/utils"
 import { Label } from "./ui/label"
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
-import { FaGoogle } from "react-icons/fa";
+import { useAuthContext } from "@/context/AuthContext"
+import GoogleLoginButton from "./GoogleLoginButton"
 
-// interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> { }
+
 
 export function UserAuthForm() {
-    // const [isLoading, setIsLoading] = React.useState([])
 
-    // async function onSubmit(event) {
-    //     event.preventDefault()
-    //     setIsLoading(true)
-
-    //     setTimeout(() => {
-    //         setIsLoading(false)
-    //     }, 3000)
-    // }
 
     return (
         <div>
@@ -32,9 +22,9 @@ export function UserAuthForm() {
                     <p className="justify-center flex ">Enter your email address and password.</p>
                 </div>
                 <div className="mt-4 flex flex-col">
-                    <label className="" for={"email"}>Enter Your Email</label>
+                    <Label className="" htmlFor={"email"}>Enter Your Email</Label>
                     <Input type={"email"} className={""}></Input>
-                    <label for={"password"}>Enter Your Password</label>
+                    <Label htmlFor={"password"}>Enter Your Password</Label>
 
                     <Input type={"password"} className={" mb-5"}></Input>
 
@@ -43,8 +33,7 @@ export function UserAuthForm() {
             </form>
             <div className="justify-center flex flex-col mt-4">
                 <p className="text-xl font-semibold mb-5 ">Or Continue with</p>
-                <Button >Sign in with <span className="ms-2 flex my-auto items-center"> <FaGoogle /> </span></Button>
-
+                <GoogleLoginButton />
             </div>
         </div>
     )

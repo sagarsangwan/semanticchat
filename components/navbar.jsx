@@ -1,6 +1,7 @@
 
 'use client'
 import React, { useState } from "react"
+
 import Link from "next/link"
 import { Menu, Search } from "lucide-react"
 import { Button } from "./ui/button"
@@ -17,9 +18,9 @@ export default function Navbar() {
         <nav className=" w-full border-b md:border-0">
             <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
                 <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                    <Button variant="linkWithoutUnderline" href="/">
+                    <Link variant="linkWithoutUnderline" href="/">
                         <h1 className="text-3xl font-bold text-purple-600">Semantic chat</h1>
-                    </Button>
+                    </Link>
                     <div className="md:hidden">
                         <button
                             className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
@@ -36,7 +37,7 @@ export default function Navbar() {
                     <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                         {menus.map((item, idx) => (
                             <li key={idx} className="hover:text-gray-400">
-                                <Button href={item.path} variant="link">{item.title}</Button>
+                                <Link href={item.path} variant="link">{item.title}</Link>
                                 {/* <Link href={item.path}>{item.title}</Link> */}
                             </li>
                         ))}
